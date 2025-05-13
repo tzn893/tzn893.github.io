@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>tzn的小窝 | tzn的小窝</title><meta name="author" content="tzn"><meta name="copyright" content="tzn"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="再探PBR—微表面模型还记得面试被问到是否了解PBR的时候，我每次都能吟唱而出：“PBR基于能量守恒理论，能保证入射能量和出射能量一致，其中，漫反射由Lambert项模拟，而金属材质由Cook-Torrance项模拟，Cook-Torrance基于微表面模型包括法线分布，几何遮蔽以及菲涅尔反射项。”每当被问到这些问题，我心里都在祈祷面试官不会继续追问下去，因为我并不清楚这几个神奇的式子究竟是从哪里">
+<meta property="og:type" content="website">
+<meta property="og:title" content="tzn的小窝">
+<meta property="og:url" content="http://example.com/images/material/%E6%9D%90%E8%B4%A8.html">
+<meta property="og:site_name" content="tzn的小窝">
+<meta property="og:description" content="再探PBR—微表面模型还记得面试被问到是否了解PBR的时候，我每次都能吟唱而出：“PBR基于能量守恒理论，能保证入射能量和出射能量一致，其中，漫反射由Lambert项模拟，而金属材质由Cook-Torrance项模拟，Cook-Torrance基于微表面模型包括法线分布，几何遮蔽以及菲涅尔反射项。”每当被问到这些问题，我心里都在祈祷面试官不会继续追问下去，因为我并不清楚这几个神奇的式子究竟是从哪里">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/ranran0.png">
+<meta property="article:published_time" content="2025-05-13T01:59:42.829Z">
+<meta property="article:modified_time" content="2025-05-13T01:53:16.502Z">
+<meta property="article:author" content="tzn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/ranran0.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/images/material/%E6%9D%90%E8%B4%A8.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'tzn的小窝',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-05-13 09:53:16'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/ranran0.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="tzn的小窝"><span class="site-name">tzn的小窝</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">tzn的小窝</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="再探PBR—微表面模型"><a href="#再探PBR—微表面模型" class="headerlink" title="再探PBR—微表面模型"></a>再探PBR—微表面模型</h1><p>还记得面试被问到是否了解PBR的时候，我每次都能吟唱而出：“PBR基于能量守恒理论，能保证入射能量和出射能量一致，其中，漫反射由Lambert项模拟，而金属材质由Cook-Torrance项模拟，Cook-Torrance基于微表面模型包括法线分布，几何遮蔽以及菲涅尔反射项。”每当被问到这些问题，我心里都在祈祷面试官不会继续追问下去，因为我并不清楚这几个神奇的式子究竟是从哪里冒出来的，和它声称的“微表面”模型的联系在哪里（实际上工业界可能确实不关心这些问题）。</p>
+<p>最近刷了一下UCSD CSE 272，并阅读了Eric[1]，在这方面又有些新的感悟，随撰文记录。</p>
+<h4 id="1-再探微表面模型"><a href="#1-再探微表面模型" class="headerlink" title="1.再探微表面模型"></a>1.再探微表面模型</h4><p>微表面模型假设了物体表面由无数微小表面构成的，这些微小表面的表现累积成了宏观上物体表面的表现。目前，网上很多流行的PBR教程都是这么描述的。然而，目前鲜有资料说明用更严谨的数学语言描述这些微表面的行为，微表面模型中法线分布D, 菲涅尔F以及几何遮蔽项G这些描述宏观统计表现的项是怎么”统计”出来的。而这就是本节的重点。</p>
+<p>考虑一个微表面分布，如图1所示。</p>
+<p><img src="imgs\micoface1.png" alt="图1" title="图1 一个微表面分布"></p>
+<p>对于一个法线为$w_g$ 的物体表面$G$（黑色线段），其由无数微表面构成（红色曲线段）。其中，微表面上任意一点$p_m$ 的法线为$\omega_m$ 。假设物体表面$G$ 为单位面积1 ，则红色微表面在物体表面上的投影面积必须与其相等，如公式(1)所示。</p>
+<script type="math/tex; mode=display">
+\int w_g\cdot w_m dp_m = 1 (1)</script><p>由了以上定义，我们可以定义法线分布(Distribution of Normal)。该项统计了在物体表面上朝向指定方向的微表面法线占整个区域的面积。如公式(2)所示。</p>
+<script type="math/tex; mode=display">
+D(w) = \int_M \delta_w(w_m(p_m)) dp_m (2)</script><p>其中，$\delta_w(w_m) = \delta(||w-w_m||)$ 为采样函数。$M$ 为整个微表面区域(图中红色线)。通过公式(2)，可以算出法向为$w_m$ 的微表面的面积总和。 </p>
+<p><em>在Eric[1]原文中，特意强调了这里Distribution of Normal与Normal Distribution的差异。但在后文关于BRDF的推导中，又直接使用这里的Distribution of Normal作为BRDF方程中的Normal Distribution，导致一定歧义。个人认为，Distribution of Normal与Normal Distribution主要在于一个是在确定面积下的确定面积量，一个是无限小微元上的密度，两者在一定程度上是等价的。</em></p>
+<p>此外，考虑一块微表面区域$M’\in M$ ，以及单位圆上的一块区域$\Omega’ \in \Omega$ 满足$M’$ 中的任意一点$p_m$ 对应的法线$w_m$ 有$w_m \in \Omega’$  。且对于任意$w_m\in \Omega’$ 存在$p_m \in M’$ 。两者存在几何关系，如公式(3)所示。</p>
+<script type="math/tex; mode=display">
+A=\int_{M'} dp_m = \int_{\Omega'} D(w_m) dw_m(3)</script><p>其中，A为 微表面区域面积。该关系可以通过积分换序证得，如公式(4)所示。</p>
+<script type="math/tex; mode=display">
+\int_{\Omega'} D(w_m) dw_m=\int_{\Omega'} \int_{M'} \delta_{w_m}(w_m) dp_mdw_m=\int_{M'}\int_{\Omega'}\delta_{w_m}(w_m) dw_m dp_m=\int_{M'} dp_m (4)</script><p>同样的对于定义在方向角上的任意函数$f(\omega_m)$ ，其同样满足类似公式(3)的关系。如公式(5)所示。</p>
+<script type="math/tex; mode=display">
+\int_{\Omega'} f(w_m) D(w_m) dw_m = \int_{M'} f(w_m(p_m))dp_m (5)</script><p>公式(5)的证明过程和公式(4)类似，这里不再赘述。</p>
+<p>而对于定义在微表面上的任意函数$g(p_m)$ ，则可以通过公式(6)定义其在方向角空间下的对应形式。</p>
+<script type="math/tex; mode=display">
+g(w) = \frac{\int_{M'} g(p_m)\delta_{w}(w_m(p_m))dp_m }{\int_{M'} \delta_{w}(w_m(p_m))dp_m} (6)</script><p>将其带入到公式(7)中便可验证。</p>
+<script type="math/tex; mode=display">
+\int_{\Omega'} g(w_m) D(w_m)dw_m = \int_{\Omega'} \frac{\int_{M'} g(p_m) \delta_{w_m}(w_m(p_m))dp_m}{D(w_m)} D(w_m) dw_m</script><script type="math/tex; mode=display">
+= \int_{\Omega'} \int_{M'} g(p_m) \delta_{w_m}(w_m(p_m))dp_mdw_m=\int_{M'}g(p_m)dp_m (7)</script><p>公式(6)提供了统计了微表面中的某项属性并将其转到宏观表面尺度，进而使微表面模型转为我们可以计算的宏观表面模型。</p>
+<h4 id="2-从微表面模型到BRDF"><a href="#2-从微表面模型到BRDF" class="headerlink" title="2.从微表面模型到BRDF"></a>2.从微表面模型到BRDF</h4><p>本节将从微表面模型建立对应的宏观BRDF模型。</p>
+<p>首先考虑对于物体表面$M$ 其出射辐射度可以表示为公式(8):</p>
+<script type="math/tex; mode=display">
+L(w_0, M) = \frac{\int_M Proj(p_m,w_o) L(w_o, p_m) dp_m}{\int_M Proj(p_m,w_o)dp_m} (8)</script><p>其中$L(w_o, p_m)$ 为从各个微表面中出射的辐射度，而$Proj(p_m,w_o)$  为微表面投影到视线方向$w_o$ 上后的面积。如图2所示，红色区域中的微表面通过$Proj$ 操作被投影到绿色区域上。由于辐射度的物理含义为物体表面向某方向出射能量的密度，因此公式(8)分子通过计算辐射度关于面积的加权求和计算对应区域的辐照度，除以分母宏观区域的投影面积后，得到投影后的辐射度。 </p>
+<p><img src="C:\Users\谈造楠\AppData\Roaming\Typora\typora-user-images\image-20250409230656312.png" alt="image-20250409230656312"></p>
+<p>在图2中，可以观察到微表面存在自成阴影的黑色区域，而这些黑色区域是不对最终的投影面积做贡献。因此，可以考虑在投影项$Proj$ 中加入几何遮蔽项$G(w_0,p_m)$ 描述这一现象。当微表面处于未遮蔽区域时，其几何遮蔽项为1，而处于黑色遮蔽区域内的几何遮蔽项为0。</p>
+<p>受限于算力，直接计算几何遮蔽项的显式解析式是不可能的。因此，我们需要考虑从一些宏观属性上约束几何遮蔽项。</p>
+<p>观察图2，可以看到无论其微表面如何分布，在宏观表面不变的情况下，其投影区域的面积(绿色区域)是不变的。因此，我们可以通过公式(9)约束几何遮蔽$G$。</p>
+<script type="math/tex; mode=display">
+cos\theta_o = \int_M G(w_0,p_m) (w_m \cdot w_o) d p_m(9)</script><p>其中$w_g$ 为宏观表面法线，$cos \theta_o = (w_g \cdot w_o)$ 。公式中，$ G(w_o,p_m) (w_m \cdot w_o)$ 可以被视为各个微表面在方向$w_o$ 上的投影面积$Proj( p_m,w_o)$ 。将其带入到公式(8)中可得公式(10)。</p>
+<script type="math/tex; mode=display">
+L(w_o,M)=\frac{\int_M G(w_o,p_m)(w_m \cdot w_o) L(w_o,p_m)dp_m}{\int_M G(w_o,p_m)(w_m \cdot w_o) dp_m}</script><p> 代入公式(9)可以进一步化简为公式(11)。</p>
+<script type="math/tex; mode=display">
+L(w_o,M)=\frac{\int_M G(w_o,p_m)(w_m \cdot w_o) L(w_o,p_m)dp_m}{cos \theta_o} (11)</script><p>根据公式(5)所述的几何关系，可得公式(12)。</p>
+<script type="math/tex; mode=display">
+L(w_o, M) = \frac{1}{cos \theta_o} \int_M G(w_o, w_m) (w_m\cdot w_o) L(w_o,w_m) D(w_m)dw_m=\int_M L(w_o, w_m) D_{w_o}(w_m) dw_m  (12)</script><p>其中为了简单记，$D_{w_o}(w_m)$ 囊括了公式(12)所有几何属性，如公式(13)所示。</p>
+<script type="math/tex; mode=display">
+D_{w_o}(w_m) = \frac{1}{cos \theta_o} G(w_o, w_m) (w_m\cdot w_o) D(w_m)(13)</script><p> 有了宏观出射辐射度与微表面出射辐射度之间的关系，只需计算微表面入射辐射度与入射辐射度之间的关系，我们便完成了BRDF推导的最后一块拼图。</p>
+<p>定义微表面BRDF函数为公式(14)。</p>
+<script type="math/tex; mode=display">
+\rho(w_i,w_o,w_m) = \frac{dL(w_o,w_m)}{(w_i \cdot w_m)L(w_i) dw_i} (14)</script><p>根据(13)的定义，可以写出 $L(w_o, M)$ 的另一种形式公式(15)</p>
+<script type="math/tex; mode=display">
+L(w_o, M) = \int dL(w_o, w_m) = \int_{\Omega'} \rho(w_i, w_o, w_m) (w_i \cdot w_m) L(w_i) dw_i(15)</script><p>接着在公式(12)中，对$L(w_o,M)$ 关于$w_i$ 微分可得公式(16)。</p>
+<script type="math/tex; mode=display">
+dL(w_o,M) = \int_M dL(w_o, w_m) D_{w_o}(w_m) dw_m=L(w_i)dw_i \int_{\Omega_i} \rho(w_i,w_o,w_m)(w_i\cdot w_m)D_{w_o}(w_m)dw_m (16)</script><p> 与公式(14)类似，定义宏观BRDF函数$\rho(w_i, w_o, M)$ 如公式(17)所示。</p>
+<script type="math/tex; mode=display">
+\rho(w_i,w_o,M) = \frac{dL(w_o, M)}{cos\theta_i L(w_i)dw_i}(17)</script><p>其中$cos \theta_i = (w_i \cdot w_g)$ 为宏观法线与入射光方向的夹角。</p>
+<p>将(17)以及(13)带入(16)中可得公式(18)。</p>
+<script type="math/tex; mode=display">
+\rho(w_i,w_o,M) = \frac{1}{cos\theta_i}\int_{\Omega_i} \rho(w_i,w_o,w_m)(w_i\cdot w_m)D_{w_o}(w_m)dw_m</script><script type="math/tex; mode=display">
+= \frac{1}{cos \theta_i cos\theta_o}\int_{\Omega_i} \rho(w_i,w_o,w_m)G(w_o, w_m)(w_i\cdot w_m) (w_m\cdot w_o) D(w_m)dw_m</script><script type="math/tex; mode=display">
+=\frac{1}{cos \theta_i cos\theta_o}\int_{\Omega_i} \rho(w_i,w_o,w_m)G_2(w_o, w_m, w_i)(w_i\cdot w_m) (w_m\cdot w_o) D(w_m)dw_m(18)</script><p>终于，经过繁琐的推导，我们得到了微表面BRDF与宏观BRDF之间的关系。这里，需要特别注意的是目前常见的几何遮蔽项一般会被分解为$w_o,w_m$ 以及$w_i,w_m$ 两个对称的分量，因此一般用$G_2(w_o,w_m,w_i)$ 来描述几何遮蔽项。</p>
+<p>下面，考虑如何定义微表面的BRDF。对于某块微表面，假设其只发生镜面反射，如公式(19)所示。</p>
+<script type="math/tex; mode=display">
+dL(w_o, w_m)=F(w_h, w_o) L(w_i)\delta_{w_h}(w_m) dw_h (19)</script><p>其中$w_h=\frac{w_i + w_o}{|w_i + w_o|}$ 为半角向量；$L(w_i)$ 为入射光线；$F(w_h, w_o)$ 为菲涅尔项，描述了光线由于折射导致的衰减。公式（19）说明了，入射光线在经过折射后，只有法线方向为$w_h$ 的表面才会反射，因此是标准的镜面反射。</p>
+<p>将(19)带入到公式(14)中得公式(20)。</p>
+<script type="math/tex; mode=display">
+\rho(w_i, w_o, w_m) = \frac{dL(w_o,w_m)}{(w_i \cdot w_m)L(w_i) dw_i}=\frac{F(w_h, w_o) L(w_i)\delta_{w_h}(w_m) dw_h}{(w_i \cdot w_m) L(w_i)dw_i}</script><script type="math/tex; mode=display">
+= |\frac{dw_h}{dw_i}| \frac{F(w_h, w_o)\delta_{w_h}(w_m)}{(w_i \cdot w_m) }=\frac{F(w_h, w_o) \delta_{w_h}(w_m)}{4(w_i\cdot w_h) (w_i \cdot w_m)} (20)</script><p>其中关于$|\frac{dw_h}{dw_i}| = \frac{1}{4(w_i \cdot w_h)}$ 的证明将在附录1中展示。</p>
+<p>将公式(20)带入到公式(18)中得公式(21)。</p>
+<script type="math/tex; mode=display">
+\rho(w_i,w_o,M) =\frac{1}{cos \theta_i cos\theta_o}\int_{\Omega_i} \rho(w_i,w_o,w_m)G_2(w_o, w_m, w_i) (w_i\cdot w_m) (w_m\cdot w_o) D(w_m)dw_m</script><script type="math/tex; mode=display">
+=\frac{1}{cos \theta_i cos\theta_o}\int_{\Omega_i} \frac{F(w_h, w_o) \delta_{w_h}(w_m)}{4(w_i\cdot w_h) (w_i \cdot w_m)} G_2(w_o, w_m, w_i) (w_i\cdot w_m)(w_m\cdot w_o) D(w_m)dw_m</script><script type="math/tex; mode=display">
+= \frac{1}{cos \theta_i cos\theta_o} \frac{F(w_h, w_o)}{4(w_i\cdot w_h) (w_i \cdot w_h)} G_2(w_o, w_h, w_i) (w_i\cdot w_h)(w_h\cdot w_o) D(w_h)</script><script type="math/tex; mode=display">
+=\frac{F(w_h, w_o)G_2(w_o, w_h, w_i) D(w_h)}{4cos\theta_i cos\theta_o} (21)</script><p><em>需要注意的是，在Eric[1]的原文中公式(20)被写为$ |\frac{dw_h}{dw_i}| \frac{F(w_h, w_o)\delta_{w_h}(w_m)}{(w_i \cdot w_h)}$ 。个人认为该形式中分母上的$(w_i \cdot w_h)$ 意义不明。而本文采用的形式逻辑上更加清晰且同样能推导出正确结果，故不采用Eric的版本。</em></p>
+<p>可以看到公式(21) 就是Cook-Torrance 模型，而上述计算过程验证了<strong>Cook-Torrance模型即为假设所有反射为镜面反射的微表面模型</strong> 。</p>
+<h4 id="3-法线分布函数-D"><a href="#3-法线分布函数-D" class="headerlink" title="3.法线分布函数$D$"></a>3.法线分布函数$D$</h4><p>本节将详细讨论微表面模型中$D$ 的来龙去脉。关于法线分布，Nathan Reed的博文《Slope Space in BRDF Theory》[2] 有详细描述, 本节将按照该文中的脉络介绍。</p>
+<p>在开始前，我们需要重新定义法线分布函数$D$。尽管公式(2) 已经给出了法线分布的定义，然而在实际计算中，讨论具体的微表面如何分布是不切实际的。因此，我们需要更宏观的属性来描述$D$ 的性质。</p>
+<p>对于单位面积区域$M$ 根据公式(3)以及公式(2) 有公式(22)。</p>
+<script type="math/tex; mode=display">
+\int_M (w_g \cdot w_m) D(w_m) dp_m=\int_{\Omega} (w_g \cdot w_m)d w_m = A_M = 1(22)</script><p>其中$A_M$ 为宏观区域$M$ 的面积，既1。在公式(22)中可以看到，法线分布$D$ 与微表面微元在$M$ 中的投影$(w_g \cdot w_m) dp_m$ 的加权求和为单位面积1。这意味着，法线分布不是我们常规认知的定义在微表面法线空间中的概率分布。而是 <strong>定义微表面区域在平面xy上的投影中的概率分布</strong>。 该性质对下文正确推导法线分布的性质至关重要。</p>
+<p>在BRDF理论中，法线分布一般定义在斜率空间(Slope Space)中。Slope Space是一个2D平面空间，其x, y坐标分别对应平面在x方向以及y方向上的斜率$\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}$ 。根据几何关系，平面上的法线可以与斜率空间中的点一一对应，如图3所示。</p>
+<p><img src="imgs/slope1.png" alt="图3"></p>
+<p>可以看到，图中蓝色三角形与黑色三角形相似，角度相等。因此，物体表面斜率与法线存在如公式(23)的关系。</p>
+<script type="math/tex; mode=display">
+\left\{\begin{matrix}
+ \tilde{x} =\frac{\partial z}{\partial x} = -\frac{n_x}{n_z} \\
+ \tilde{y}=\frac{\partial z}{\partial y} = -\frac{n_y}{n_z}
+\end{matrix}\right.  (23)</script><p>其中$\tilde{x}, \tilde{y}$ 为表面斜率空间下的坐标, $n_x, n_y, n_z$ 为法线在斜率空间下的三个分量。</p>
+<p>使用斜率空间定义法线分布有几点好处: 1. 由于微表面模型一般假设微表面的法线分布在上半球上，而斜率空间刚好对应上半球分布，因此定义在该空间下的法线分布不存在越界问题。2. slope space与直角坐标系之间的转化十分简单，计算开销较小。</p>
+<p>对于法线分布，一般我们会将其定义成在slope space下的概率分布，接着根据几何关系将其转到直角坐标系下使用。具体来说，对于$D(w)$ , 已知定义在slope space中的法线分布$D(\tilde x)$ ,两者需要满足$D(w)dw = D(\tilde x)d\tilde x \to D(w) = D(\tilde x) \frac{d\tilde x}{dw}$ 。因此，计算法线分布的关键在于计算雅可比项 $\frac{d\tilde x}{dw}$。而Nathan[2] 在文中提到了基于外微分的雅可比项计算方式，下面我们将介绍该方法。</p>
+<p>法线方向以及对应slope space坐标在球极坐标系下的表达式如公式(24), (25)所示。</p>
+<script type="math/tex; mode=display">
+\left\{\begin{matrix}
+ x = cos \theta sin \phi \\ 
+ y = sin \theta sin \phi \\
+ z = cos \phi
+
+\end{matrix}\right. (24)</script><script type="math/tex; mode=display">
+\left\{\begin{matrix}
+ \tilde x = -\frac{x}{z} = - cos \theta tan \phi \\
+ \tilde y = -\frac{y}{z} = - sin\theta tan \phi
+\end{matrix}\right. (25)</script><p>由于$D$ 为定义在$x,y$ 平面的概率分布，计算2-form $dx \wedge  dy$ 有公式(26)。</p>
+<script type="math/tex; mode=display">
+dx \wedge  dy = (-sin\theta sin\phi d\theta + cos\theta cos\phi d\phi) \wedge  (cos\theta sin\phi d\theta +sin\theta cos\phi d\phi)</script><script type="math/tex; mode=display">
+= -sin^2\theta sin\phi cos \phi d\theta \wedge  d\phi + cos^2\theta sin\phi cos \phi d\phi \wedge d\theta</script><script type="math/tex; mode=display">
+= sin\phi cos\phi d\phi \wedge  d\theta (26)</script><p>计算2-form $d\tilde x \wedge  d\tilde y$ 有公式(27)。</p>
+<script type="math/tex; mode=display">
+d \tilde x \wedge  d \tilde y = (sin\theta tan\phi d\theta - cos\theta \frac{1}{cos^2\phi}d\phi)
+\wedge (-cos\theta tan\phi d\theta - sin\theta \frac{1}{cos^2\phi}d\phi)</script><script type="math/tex; mode=display">
+=-sin^2\theta tan\phi \frac{1}{cos^2\phi} d\theta \wedge d\phi + cos^2 \theta tan\phi \frac{1}{cos^2\phi}d\phi</script><script type="math/tex; mode=display">
+=tan\phi \frac{1}{cos^2\phi} d\phi \wedge d \theta(27)</script><p>用公式 (27)除以公式(26) ，可以得到雅可比项如公式(28)所示。</p>
+<script type="math/tex; mode=display">
+\frac{d\tilde x}{dw}=\frac{d \tilde x \wedge  d \tilde y}{dx \wedge  dy} = \frac{1}{cos^4 \phi} (28)</script><p>对于任意定义在斜率空间中的概率分布，乘上公式(28)后便可得到对应的直角坐标系下的法线分布。</p>
+<p>例如，对于2D高斯分布，乘上公式(28)后有公式(29)。</p>
+<script type="math/tex; mode=display">
+\frac{1}{2 \sigma^2}e^{-\frac{\tilde |x|^2}{2\sigma^2}}\cdot \frac{d\tilde x}{dw}=\frac{1}{2 \sigma^2 cos^4 \theta}e^{-\frac{\tilde |x|^2}{2\sigma^2}}=\frac{1}{acos^4\theta}e^{-\frac{tan\theta^2}{a^2}} (29)</script><p>可以看到，公式(29)就是Beckmann法线分布，而$a=\sqrt2 \sigma$ 为粗糙度。该公式证明了<strong>Beckmann法线分布实际是定义在slope space下的正态分布</strong>。</p>
+<p>另一方面，目前在实践中一般更常用GGX分布。其各项同性形式如公式(30)所示。</p>
+<script type="math/tex; mode=display">
+D(w_m)=\frac{a^2}{\pi ((a^2 - 1)cos^2\theta_m + 1)^2} (30)</script><p>重新整理该公式得公式(31)。</p>
+<script type="math/tex; mode=display">
+D(w_m) = \frac{a^2}{\pi(a^2cos^2 \theta_m + sin^2\theta_m)^2}</script><script type="math/tex; mode=display">
+=\frac{a^2}{\pi cos^4\theta_m(a^2 + tan^2\theta_m)^2}(31)</script><p>将(31) 中雅可比项$\frac{1}{cos^4 \theta}$ 去掉后，可以得到其slope 空间下的形式，如公式(32)所示。</p>
+<script type="math/tex; mode=display">
+D(\tilde x) = \frac{a^2}{\pi (a^2 + |\tilde x|^2)} (32)</script><p>而公式(32)恰好对应自由度为2的t-分布。该公式验证了<strong>GGX法线分布实际是定义在slope space空间下的t-分布</strong>。由于GGX分布相比Beckmann分布具有更大的边缘拖尾区域，更能模拟现实现象，因此目前主流的渲染器均采用GGX分布。而t-分布相比正太分布也存在面积更大的拖尾区域。这从侧面也印证了GGX分布就是t-分布的观点。</p>
+<p>基于以上讨论，我们可以看到各种千奇百怪的法线分布函数只是<strong>经过雅可比变换过后的概率密度函数</strong>，它们实际上都是在假定物体表面的法线分布满足某种特殊的概率分布。</p>
+<h4 id="4-几何遮蔽项-G"><a href="#4-几何遮蔽项-G" class="headerlink" title="4.几何遮蔽项$G$"></a>4.几何遮蔽项$G$</h4><p>在法线分布确定后，下面需要做的是确定其空间排布，以计算微表面的几何遮蔽信息。</p>
+<p>公式(9)展示了几何遮蔽项必须满足的性质，然而这对于唯一确定发现分布，仍远远不够。对于相同的法线分布，如图4所示，其可以存在多种不同的排布方式，而不同的排布方式对应不同的几何遮蔽函数。因此，为了保证系统的唯一解，需要对法线分布做出进一步限制。</p>
+<p><img src="imgs/G1.png" alt="图4"></p>
+<p>目前，工业界最常用的假设是Smith Microsurface Profile，如图4中右边所演示的，该模型假设任意两个微表面之间的高度相互独立，这意味这即使是两个相邻的微表面，其高度依旧可能差距很大。</p>
+<p>基于以上假设，其对应的几何遮蔽项可以分为两个部分：1. 由于微表面方向与出射方向大于90，导致的自遮蔽阴影 2. 被远距离未表面遮蔽导致的阴影。两者结合如公式(33)所示。</p>
+<script type="math/tex; mode=display">
+G(w_m, w_o) = G^{local}(w_m,w_o)G^{dist}(w_o)(33)</script><p>其中，$G^{local}(w_m,w_o)$ 为第一种自遮蔽阴影情况，其如公式(34)所示，当 $w_m \cdot w_o &gt; 0$ 时 $\chi^{+}(w_m, w_o)=1$ 否则$\chi^{+}(w_m, w_o) = 0$。</p>
+<script type="math/tex; mode=display">
+G^{local}(w_m, w_o) = \chi^{+}(w_m, w_o) (34)</script><p>将(33), (34)带入到公式(9)中得。</p>
+<script type="math/tex; mode=display">
+cos \theta_o = \int_\Omega G(w_0, p_m) (w_m \cdot w_o) dp_m</script><script type="math/tex; mode=display">
+=\int_\Omega G(w_0, w_m)(w_m \cdot w_o) D(w_m)dw_m</script><script type="math/tex; mode=display">
+=\int_\Omega G^{local} (w_m, w_o)G^{dist}(w_o)(w_m \cdot w_o) D(w_m) dw_m</script><script type="math/tex; mode=display">
+=\int_\Omega \chi^{+}(w_m, w_o) G^{dist}(w_o) (w_m \cdot w_o) D(w_m) dw_m</script><script type="math/tex; mode=display">
+= G^{dist}(w_o) \int_\Omega (w_m \cdot w_o) D(w_m) dw_m (35)</script><p>根据公式(35)，$G^{dist}(w_o)$ 的定义如公式(36)所示。</p>
+<script type="math/tex; mode=display">
+G^{dist}(w_o) = \frac{cos \theta_o}{ \int_\Omega (w_m \cdot w_o) D(w_m) dw_m  } (36)</script><p>则几何遮蔽函数$G(w_m, w_o)$ 的定义如公式(37)所示。</p>
+<script type="math/tex; mode=display">
+G(w_m, w_o)=\chi^{+}(w_m, w_o)\frac{cos \theta_o}{ \int_\Omega (w_m \cdot w_o) D(w_m) dw_m  }</script><p>而在实战过程中，几何遮蔽项一般使用 Smith Masking Function近似，如公式(38)所示。</p>
+<script type="math/tex; mode=display">
+G_{Smith}(w_m, w_o) = \chi^{+}(w_m, w_o) \frac{1}{1 + \Lambda(x)} (38)</script><p>其中$\Lambda(x)$ 定义如公式(39)所示。</p>
+<script type="math/tex; mode=display">
+\Lambda(w) = \frac{\sqrt{1 + \frac{(a_xw^l_x)^2 + (a_y w_y^l)^2}{(w^l_z)^2}}-1}{2} (39)</script><p>其中$w^l_i$ 为，$w$ 在切线空间下第$i$ 个坐标轴上的分量，$a_x, a_y$ 为各向异性粗糙度。</p>
+<h4 id="5-结语"><a href="#5-结语" class="headerlink" title="5. 结语"></a>5. 结语</h4><p>写这段短文的时候，不禁感概一个看似简单的微表面模型背后竟有如此复杂的数学建模和推导。一方面，该模型面对无穷复杂的现实世界大刀阔斧的简化了大量细节，使材质能简单高效计算的同时与现实材质有较高匹配度。另一方面，如此精巧的模型也只是对有限材质数据集的拟合，并在推导过程中做了大量简化，这对于完全建模真实世界仍存在一定距离。而近年来神经材质的崛起意味着我们可以用复杂的模型准确模拟传统方法难以建模的材质，这可能是突破我们传统建模方式的关键所在。</p>
+<p>[1]Eric Heitz.Understanding the Masking-Shadowing Function in Microfacet-Based BRDFs</p>
+<p>[2] Nathan Reed. Slope Space in BRDF Theory</p>
+</div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/ranran0.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tzn</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tzn893"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">tzn的笔记杂物间, 以后可能会写点有杂谈发电在这里捏</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/05/13/mat-cook-torrance/" title="再探PBR--微表面模型"><img src="/images/16801.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再探PBR--微表面模型"/></a><div class="content"><a class="title" href="/2025/05/13/mat-cook-torrance/" title="再探PBR--微表面模型">再探PBR--微表面模型</a><time datetime="2025-05-13T01:58:37.000Z" title="发表于 2025-05-13 09:58:37">2025-05-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/25/Volume2/" title="再探体渲染(二)--Ray Marching 从理论到实现"><img src="/images/kiki0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再探体渲染(二)--Ray Marching 从理论到实现"/></a><div class="content"><a class="title" href="/2024/10/25/Volume2/" title="再探体渲染(二)--Ray Marching 从理论到实现">再探体渲染(二)--Ray Marching 从理论到实现</a><time datetime="2024-10-25T13:35:57.000Z" title="发表于 2024-10-25 21:35:57">2024-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/10/22/VolumeRender1/" title="再探体渲染（一）-- 理论"><img src="/images/misc0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="再探体渲染（一）-- 理论"/></a><div class="content"><a class="title" href="/2024/10/22/VolumeRender1/" title="再探体渲染（一）-- 理论">再探体渲染（一）-- 理论</a><time datetime="2024-10-22T15:08:24.000Z" title="发表于 2024-10-22 23:08:24">2024-10-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/13/Interview/" title="校招面试题汇总"><img src="/images/mika1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="校招面试题汇总"/></a><div class="content"><a class="title" href="/2024/06/13/Interview/" title="校招面试题汇总">校招面试题汇总</a><time datetime="2024-06-13T06:52:33.000Z" title="发表于 2024-06-13 14:52:33">2024-06-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/12/Unreal-Advanced-Locomotion-Animation01/" title="Unreal Advanced Locomotion Animation (一) 基础"><img src="/images/miku2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unreal Advanced Locomotion Animation (一) 基础"/></a><div class="content"><a class="title" href="/2024/06/12/Unreal-Advanced-Locomotion-Animation01/" title="Unreal Advanced Locomotion Animation (一) 基础">Unreal Advanced Locomotion Animation (一) 基础</a><time datetime="2024-06-12T09:19:58.881Z" title="发表于 2024-06-12 17:19:58">2024-06-12</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/animation-UE/" style="font-size: 1.1em; color: #999">animation UE</a> <a href="/tags/render/" style="font-size: 1.37em; color: #99a4b2">render</a> <a href="/tags/physics/" style="font-size: 1.5em; color: #99a9bf">physics</a> <a href="/tags/Unity-%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" style="font-size: 1.1em; color: #999">Unity 游戏开发</a> <a href="/tags/vulkan/" style="font-size: 1.23em; color: #999ea6">vulkan</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">五月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">十月 2024</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-05-13T02:04:46.684Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By tzn</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
